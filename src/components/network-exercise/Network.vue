@@ -8,8 +8,12 @@ export default {
 
   data() {
     return {
+      ui: {
+        hasError: false,
+        errorMessage: undefined,
+        loadingStatus: 'not loaded',
+      },
       characterId: 11,
-      characterLoadingState: 'not loaded',
       character: {
         name: 'none',
         species: 'none',
@@ -23,14 +27,21 @@ export default {
 
   methods: {
     async loadCharacter() {
-      this.characterLoadingState = 'loading'
+      this.ui.loadingStatus = 'loading'
+      this.ui.hasError = false
+      this.ui.errorMessage = undefined
 
-      const theCharacter = await getCharacter(this.characterId)
-      this.character = mapCharacter(theCharacter)
+      const response = await getCharacter(this.characterId + 'id')
+      if (response.error) {
+        this.ui.hasError = true
+        this.ui.errorMessage = response.error
+      } else {
+        this.character = mapCharacter(response)
+      }
 
       // API is too fast, simulating a delay
       setTimeout(() => {
-        this.characterLoadingState = 'loaded'
+        this.ui.loadingStatus = 'loaded'
       }, 500)
     },
   },
@@ -41,10 +52,10 @@ export default {
   <section>
     <h1>Exercise One: Network and Sources</h1>
     <p>
-      Use the browser developer tool's debugger to find what's going wrong with
-      this page. You'll see when a character is loaded, both their origin and
-      location are not displayed; instead there are some question marks. Can you
-      find and fix this problem?
+      Use the browser developer tool's network tab to find what's going wrong
+      with this page. A Rick and Morty character should be loaded when the "Load
+      Character" button is clicked, but there's an error instead. Can you find
+      and fix this problem?
     </p>
 
     <form class="form" action="">
@@ -59,10 +70,13 @@ export default {
     </form>
 
     <div>
-      <p v-if="characterLoadingState === 'not loaded'">
+      <p v-if="ui.hasError" class="error">
+        Error loading the character: <strong>{{ ui.errorMessage }}</strong>
+      </p>
+      <p v-else-if="ui.loadingStatus === 'not loaded'">
         No character has been loaded
       </p>
-      <p v-else-if="characterLoadingState === 'loading'">
+      <p v-else-if="ui.loadingStatus === 'loading'">
         Loading...
       </p>
       <template v-else>
@@ -78,5 +92,9 @@ export default {
 }
 .form > * {
   margin-right: 0.5em;
+}
+
+.error {
+  color: red;
 }
 </style>

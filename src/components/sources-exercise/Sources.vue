@@ -51,7 +51,7 @@ export default {
         </tr>
 
         <tr>
-          <td colspan="2" v-if="result">
+          <td colspan="2" v-if="result" class="result">
             {{ augend }} + {{ addend }} = {{ result }}
           </td>
         </tr>
@@ -59,3 +59,10 @@ export default {
     </table>
   </section>
 </template>
+
+<style scoped>
+.result {
+  padding: 1em 0;
+  font-size: 2rem;
+}
+</style>
