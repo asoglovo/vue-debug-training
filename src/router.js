@@ -3,6 +3,7 @@ import Elements from './components/elements-exercise/Elements.vue'
 import Network from './components/network-exercise/Network.vue'
 import Home from './components/Home.vue'
 import Sources from './components/sources-exercise/Sources.vue'
+import Vue from './components/vue-exercise/Vue.vue'
 
 export const router = new VueRouter({
   routes: [
@@ -10,5 +11,6 @@ export const router = new VueRouter({
     { path: '/elements', component: Elements },
     { path: '/network', component: Network },
     { path: '/sources', component: Sources },
+    { path: '/vue', component: Vue },
   ]
 })
