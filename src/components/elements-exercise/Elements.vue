@@ -6,7 +6,7 @@ export default {
 
 <template>
   <section>
-    <h1>Exercise Zero: Elements</h1>
+    <h1>Elements Tab</h1>
     <p>
       Use the browser developer tool's "elements" tab to modify the page HTML
       content and CSS rules.
