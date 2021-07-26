@@ -34,6 +34,20 @@ export default {
   <section>
     <h1>Vue Devtools</h1>
 
+    <p>
+      When the "Load Next" button is clicked, we should see a Rick And Morty
+      character load in the list of characters and the count of loaded
+      characters incremented, but there is an error loading the characters. Can
+      you find what's wrong? Also, the counter of loaded characters seems to be
+      broken; can you fix this one too?
+    </p>
+
+    <p>
+      Then, when characters are loaded, they have a "see more" link which opens
+      a dialog with some extra information, but again, this is failing. Can you
+      fix this bug as well?
+    </p>
+
     <div>
       <h2>
         Characters <em>({{ characterCount }} loaded)</em>
@@ -43,7 +57,7 @@ export default {
       <ul class="character-list">
         <li v-for="character of charactersList" :key="character.id">
           <CharacterLine
-            :character="character"
+            :character="character.name"
             @see-more-clicked="seeMoreCharacterId = $event"
           />
         </li>

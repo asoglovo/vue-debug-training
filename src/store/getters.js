@@ -4,7 +4,7 @@ export const getters = {
   },
 
   characterCount(state) {
-    return Object.keys(state.charactersById).length
+    return Object.keys(state).length
   },
 
   findCharacterById(state) {
