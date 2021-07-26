@@ -13,14 +13,14 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['charactersList', 'characterCount', 'findCharacterById']),
+    ...mapGetters(['charactersList', 'characterCount', 'findCharacterByID']),
 
     seeMoreCharacter() {
       if (!this.seeMoreCharacterId) {
         throw new Error('Expected a character id')
       }
 
-      return this.findCharacterById(this.seeMoreCharacterId)
+      return this.findCharacterByID(this.seeMoreCharacterId)
     },
   },
 

@@ -21,7 +21,7 @@ export default {
     <h1>Sources Tab</h1>
     <p>
       Use the sources tab to debug the wrong behaviour in this application that
-      adds two numbers.
+      adds two numbers. Hint: there might be more than one bug.
     </p>
 
     <table>
