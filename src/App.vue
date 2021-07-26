@@ -33,9 +33,9 @@ body {
 }
 
 .main {
-  min-width: 600px;
   max-width: 800px;
   margin: 2em auto;
+  padding: 8px 40px;
 }
 
 a {
@@ -54,4 +54,20 @@ span,
 li {
   font-size: 1.25rem;
 }
+
+button,
+input {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 8px 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* section {
+  padding: 8px 40px;
+} */
 </style>

@@ -45,7 +45,7 @@ export default {
         </tr>
 
         <tr>
-          <td colspan="2">
+          <td colspan="2" class="right-aligned">
             <button @click="addNumbers">Add</button>
           </td>
         </tr>
@@ -61,6 +61,10 @@ export default {
 </template>
 
 <style scoped>
+.right-aligned {
+  text-align: right;
+}
+
 .result {
   padding: 1em 0;
   font-size: 2rem;

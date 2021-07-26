@@ -29,6 +29,13 @@ export default defineComponent({
         {{ character.gender === 'Female' ? '♀️' : '♂️' }}
       </h3>
       {{ character.species }} | {{ character.status }}
+      <br />
+      <em
+        @click="$emit('see-more-clicked', character.id)"
+        class="character__see-more"
+      >
+        see more
+      </em>
     </div>
   </div>
 </template>
@@ -40,11 +47,16 @@ export default defineComponent({
 }
 
 .character__title {
-  margin: 0.5em 0;
+  margin: 0 0 0.5em 0;
 }
 
 .character-pic {
   border-radius: 50%;
   margin-right: 40px;
+}
+
+.character__see-more {
+  cursor: pointer;
+  text-decoration: underline;
 }
 </style>

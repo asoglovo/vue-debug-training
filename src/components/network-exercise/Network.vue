@@ -50,7 +50,7 @@ export default {
 
 <template>
   <section>
-    <h1>Exercise One: Network and Sources</h1>
+    <h1>Network Tab</h1>
     <p>
       Use the browser developer tool's network tab to find what's going wrong
       with this page. A Rick and Morty character should be loaded when the "Load
