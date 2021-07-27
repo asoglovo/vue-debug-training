@@ -1,5 +1,8 @@
 # Vue Debug Training
 
+This is a project with some bugs on each of the different sections.
+Run the project locally and try to debug those errors using the browser's devtools as well as Vue's extension.
+
 ## Project setup
 
 ```
@@ -11,19 +14,3 @@ yarn install
 ```
 yarn serve
 ```
-
-### Compiles and minifies for production
-
-```
-yarn build
-```
-
-### Lints and fixes files
-
-```
-yarn lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).

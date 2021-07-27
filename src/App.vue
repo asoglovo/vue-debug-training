@@ -66,8 +66,4 @@ label {
   display: block;
   margin-bottom: 4px;
 }
-
-/* section {
-  padding: 8px 40px;
-} */
 </style>
